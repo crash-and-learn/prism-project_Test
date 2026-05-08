@@ -18,19 +18,19 @@
 
 ---
 
-## 2. 📊 3-Tier 아키텍처 기반 사내 데이터 분석 툴 개발
-비개발 직군 팀원들이 수동으로 데이터를 추출하고 엑셀로 가공하던 병목을 해결하기 위해, 로컬 API 서버와 데스크톱 UI를 결합한 사내 분석 툴을 구축 및 배포했습니다.
+## 2. 📊 풀스택 웹 기반 DRT 운영 데이터 분석 플랫폼 — **사내 공식 서비스 배포**
+비개발 직군 팀원들이 수동으로 데이터를 추출하고 엑셀로 가공하던 병목을 완전히 제거하기 위해, Next.js + Django REST Framework 기반의 웹 플랫폼을 설계·구축하여 사내 공식 서비스로 배포했습니다.
 
-* **Key Achievements:** 팀원들의 데이터 가공 소요 시간 **Zero화** 및 실시간 지표 조회 환경 구축
-* **Tech Stack:** `PySide6(GUI)`, `Django REST Framework`, `SQLAlchemy`, `Pandas`
+* **Key Achievements:** 팀원 전체의 수동 데이터 추출·가공 소요 시간 **Zero화**, 나주·청주 멀티 리전 데이터 실시간 통합 조회 환경 구축
+* **Tech Stack:** `Next.js + React`, `Zustand`, `TanStack Table`, `Django REST Framework`, `Celery`, `MySQL (멀티 리전)`
 * **Core Logic:**
-  * 클라이언트-DB 직접 연결 방식을 탈피하고 **Django API 서버를 통한 3-Tier 구조**로 보안 및 확장성 확보
-  * 대용량 데이터 전송 시 발생하는 UI 프리징을 방지하기 위해 **SQLAlchemy(ORM)**로 피벗/집계 연산을 DB 단으로 이관
+  * 드래그앤드롭으로 행/열/값을 구성하는 **동적 피벗 엔진** 구현 (SUM · AVG · DAY_AVG · COUNT 집계, Celery 비동기 처리)
+  * **나주·청주 멀티 리전 MySQL DB** 동시 조회 아키텍처 설계 — 지역 코드 기반 자동 라우팅 및 결과 통합
+  * MapLibre + DeckGL 기반 **공간 O-D 흐름 인터랙티브 지도** 시각화
+  * 프리셋 스튜디오(분석 설정 저장·공유), 멀티 헤더 **Excel 내보내기**, 자체 에러 로그 시스템
+  * CI/CD 하네스 구축 및 **Mutation Testing 56% kill rate** 달성
 
-<img width="429" height="526" alt="사내 데이터 분석 툴_로그인창" src="https://github.com/user-attachments/assets/52a6cbe6-f63e-4fa6-a052-14cea6b3898e" />
-<img width="1680" height="981" alt="사내 데이터 분석 툴_메인화면" src="https://github.com/user-attachments/assets/32d9b464-4ff1-456e-a216-49fb9fd1dabe" />
-<img width="1680" height="981" alt="사내 데이터 분석 툴_분석화면" src="https://github.com/user-attachments/assets/e7daba7c-5371-4192-833b-22b19a6800df" />
-*(▲ PySide6 및 Django 기반으로 개발한 사내 데이터 분석 툴 UI)*
+*(▲ 스크린샷 추가 예정 — 피벗 분석 화면 및 공간 O-D 지도)*
 
 ---
 
