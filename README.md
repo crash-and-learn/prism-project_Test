@@ -20,7 +20,9 @@
   * 프리셋 스튜디오(분석 설정 저장·공유), 멀티 헤더 **Excel 내보내기**, 자체 에러 로그 시스템
   * CI/CD 하네스 구축 및 **Mutation Testing 56% kill rate** 달성
 
-📂 **아키텍처 상세:** [`docs/architecture/`](./docs/architecture/) — 시스템 구성도, 데이터 흐름, 멀티 리전 라우팅 다이어그램
+📂 **엔지니어링 상세 문서:**
+- [`docs/architecture/`](./docs/architecture/) — 시스템 구성도, 데이터 흐름, 멀티 리전 라우팅 다이어그램
+- [`docs/architecture/decisions.md`](./docs/architecture/decisions.md) — **주요 설계 결정 기록(ADR):** 캐시 전략 전환, 멀티 리전 DB 도입, Mutation Testing 채택의 트레이드오프
 
 *(▲ 스크린샷 추가 예정 — 피벗 분석 화면 및 공간 O-D 지도)*
 
