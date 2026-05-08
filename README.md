@@ -1,4 +1,4 @@
-# 🚀 Fleet Data & AI Operations Portfolio
+# 🚀 모빌리티 데이터 & AI 운영 포트폴리오
 
 모빌리티/물류 도메인의 현장 비효율을 데이터와 AI 기술로 타개하는 시스템 구축 포트폴리오입니다.
 **Next.js + Django REST Framework 기반의 풀스택 웹 플랫폼을 사내 공식 서비스로 런칭**했고, 강화학습 기반 노선 최적화와 RPA 자동화 파이프라인을 직접 구축했습니다.
