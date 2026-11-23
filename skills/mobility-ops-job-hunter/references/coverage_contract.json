@@ -1,0 +1,608 @@
+{
+  "schema_version": "1.2",
+  "description": "64개 유형별 후보 행(중복 브랜드 포함)을 하나도 누락하지 않기 위한 조사계약. 관계 확인 전 legal_hint는 사실 단정 금지.",
+  "types": [
+    {
+      "type_id": "01",
+      "seq": 1,
+      "category": "공유 퍼스널 모빌리티",
+      "unanchored_queries": [
+        "공유 킥보드 운영 채용",
+        "공유 자전거 PM 운영기획 데이터"
+      ]
+    },
+    {
+      "type_id": "02",
+      "seq": 2,
+      "category": "카셰어링·렌터카·차량구독",
+      "unanchored_queries": [
+        "카셰어링 운영기획 채용",
+        "렌터카 차량구독 운영 데이터 분석"
+      ]
+    },
+    {
+      "type_id": "03",
+      "seq": 3,
+      "category": "호출·중개 플랫폼",
+      "unanchored_queries": [
+        "택시 호출 플랫폼 운영 채용",
+        "모빌리티 플랫폼 운영전략 데이터"
+      ]
+    },
+    {
+      "type_id": "04",
+      "seq": 4,
+      "category": "통합 모빌리티(MaaS)",
+      "unanchored_queries": [
+        "MaaS 통합 모빌리티 운영 채용",
+        "모빌리티 서비스 운영기획 데이터"
+      ]
+    },
+    {
+      "type_id": "05",
+      "seq": 5,
+      "category": "DRT·셔틀",
+      "unanchored_queries": [
+        "DRT 수요응답형 교통 운영 채용",
+        "셔틀 노선기획 운영 데이터"
+      ]
+    },
+    {
+      "type_id": "06",
+      "seq": 6,
+      "category": "주차·교통시설 플랫폼",
+      "unanchored_queries": [
+        "주차 플랫폼 운영 채용",
+        "주차장 운영기획 데이터 분석"
+      ]
+    },
+    {
+      "type_id": "07",
+      "seq": 7,
+      "category": "전기차 충전 인프라",
+      "unanchored_queries": [
+        "전기차 충전 운영 채용",
+        "충전 인프라 운영기획 데이터"
+      ]
+    },
+    {
+      "type_id": "08",
+      "seq": 8,
+      "category": "물류·배송·플릿 솔루션",
+      "unanchored_queries": [
+        "물류 운영기획 데이터 채용",
+        "배송 플릿 운영 개선 채용"
+      ]
+    },
+    {
+      "type_id": "09",
+      "seq": 9,
+      "category": "지도·위치·교통데이터",
+      "unanchored_queries": [
+        "교통 데이터 분석 채용",
+        "지도 위치 데이터 서비스 운영 채용"
+      ]
+    },
+    {
+      "type_id": "10",
+      "seq": 10,
+      "category": "로봇 배송·무인운송",
+      "unanchored_queries": [
+        "로봇 배송 운영 채용",
+        "자율주행 배송 서비스 운영"
+      ]
+    }
+  ],
+  "discovery": {
+    "unanchored_channels": [
+      "web",
+      "wanted",
+      "saramin",
+      "jobkorea"
+    ],
+    "min_results_reviewed": 10,
+    "note": "유형마다 unanchored_queries × unanchored_channels 조합을 기업명 없이 검색한다. 후보별 entity 검색 1건은 브랜드·법인·모회사 별칭으로 새 채용 경로와 실제 채용 법인을 찾는다."
+  },
+  "channels": [
+    {
+      "id": "official",
+      "name": "회사 공식 채용"
+    },
+    {
+      "id": "group",
+      "name": "모회사·그룹/운영법인"
+    },
+    {
+      "id": "linkedin",
+      "name": "LinkedIn Jobs"
+    },
+    {
+      "id": "wanted",
+      "name": "원티드"
+    },
+    {
+      "id": "saramin",
+      "name": "사람인"
+    },
+    {
+      "id": "jobkorea",
+      "name": "잡코리아"
+    },
+    {
+      "id": "incruit",
+      "name": "인크루트"
+    },
+    {
+      "id": "rocketpunch",
+      "name": "로켓펀치"
+    },
+    {
+      "id": "rallit_jumpit",
+      "name": "랠릿·점핏"
+    },
+    {
+      "id": "jobplanet",
+      "name": "잡플래닛"
+    },
+    {
+      "id": "official_social",
+      "name": "공식 SNS/인재풀"
+    },
+    {
+      "id": "global_careers",
+      "name": "글로벌 Careers/기타"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "01-01",
+      "type_id": "01",
+      "category": "공유 퍼스널 모빌리티",
+      "brand_name": "일레클",
+      "legal_hint": "나인투원 / 쏘카"
+    },
+    {
+      "id": "01-02",
+      "type_id": "01",
+      "category": "공유 퍼스널 모빌리티",
+      "brand_name": "지쿠(GCOO)",
+      "legal_hint": "지바이크"
+    },
+    {
+      "id": "01-03",
+      "type_id": "01",
+      "category": "공유 퍼스널 모빌리티",
+      "brand_name": "스윙(SWING)",
+      "legal_hint": "더스윙"
+    },
+    {
+      "id": "01-04",
+      "type_id": "01",
+      "category": "공유 퍼스널 모빌리티",
+      "brand_name": "킥고잉·씽씽",
+      "legal_hint": "피유엠피 / 올룰로"
+    },
+    {
+      "id": "01-05",
+      "type_id": "01",
+      "category": "공유 퍼스널 모빌리티",
+      "brand_name": "빔(Beam)",
+      "legal_hint": "빔모빌리티코리아"
+    },
+    {
+      "id": "01-06",
+      "type_id": "01",
+      "category": "공유 퍼스널 모빌리티",
+      "brand_name": "카카오 T 바이크",
+      "legal_hint": "카카오모빌리티"
+    },
+    {
+      "id": "02-01",
+      "type_id": "02",
+      "category": "카셰어링·렌터카·차량구독",
+      "brand_name": "쏘카",
+      "legal_hint": "쏘카"
+    },
+    {
+      "id": "02-02",
+      "type_id": "02",
+      "category": "카셰어링·렌터카·차량구독",
+      "brand_name": "그린카(G car)",
+      "legal_hint": "그린카"
+    },
+    {
+      "id": "02-03",
+      "type_id": "02",
+      "category": "카셰어링·렌터카·차량구독",
+      "brand_name": "투루카",
+      "legal_hint": "피플카"
+    },
+    {
+      "id": "02-04",
+      "type_id": "02",
+      "category": "카셰어링·렌터카·차량구독",
+      "brand_name": "롯데렌탈",
+      "legal_hint": "롯데렌탈"
+    },
+    {
+      "id": "02-05",
+      "type_id": "02",
+      "category": "카셰어링·렌터카·차량구독",
+      "brand_name": "SK렌터카",
+      "legal_hint": "SK렌터카"
+    },
+    {
+      "id": "03-01",
+      "type_id": "03",
+      "category": "호출·중개 플랫폼",
+      "brand_name": "카카오 T",
+      "legal_hint": "카카오모빌리티"
+    },
+    {
+      "id": "03-02",
+      "type_id": "03",
+      "category": "호출·중개 플랫폼",
+      "brand_name": "티맵",
+      "legal_hint": "티맵모빌리티"
+    },
+    {
+      "id": "03-03",
+      "type_id": "03",
+      "category": "호출·중개 플랫폼",
+      "brand_name": "타다",
+      "legal_hint": "VCNC"
+    },
+    {
+      "id": "03-04",
+      "type_id": "03",
+      "category": "호출·중개 플랫폼",
+      "brand_name": "우버택시(Uber Taxi)",
+      "legal_hint": "우버택시 / Uber"
+    },
+    {
+      "id": "03-05",
+      "type_id": "03",
+      "category": "호출·중개 플랫폼",
+      "brand_name": "아이엠(i.M)",
+      "legal_hint": "진모빌리티"
+    },
+    {
+      "id": "03-06",
+      "type_id": "03",
+      "category": "호출·중개 플랫폼",
+      "brand_name": "반반택시",
+      "legal_hint": "코나투스"
+    },
+    {
+      "id": "04-01",
+      "type_id": "04",
+      "category": "통합 모빌리티(MaaS)",
+      "brand_name": "슈퍼무브",
+      "legal_hint": "슈퍼무브"
+    },
+    {
+      "id": "04-02",
+      "type_id": "04",
+      "category": "통합 모빌리티(MaaS)",
+      "brand_name": "티맵",
+      "legal_hint": "티맵모빌리티"
+    },
+    {
+      "id": "04-03",
+      "type_id": "04",
+      "category": "통합 모빌리티(MaaS)",
+      "brand_name": "카카오 T",
+      "legal_hint": "카카오모빌리티"
+    },
+    {
+      "id": "04-04",
+      "type_id": "04",
+      "category": "통합 모빌리티(MaaS)",
+      "brand_name": "티머니",
+      "legal_hint": "티머니"
+    },
+    {
+      "id": "04-05",
+      "type_id": "04",
+      "category": "통합 모빌리티(MaaS)",
+      "brand_name": "이동의즐거움",
+      "legal_hint": "이동의즐거움"
+    },
+    {
+      "id": "05-01",
+      "type_id": "05",
+      "category": "DRT·셔틀",
+      "brand_name": "바로DRT",
+      "legal_hint": "스튜디오갈릴레이"
+    },
+    {
+      "id": "05-02",
+      "type_id": "05",
+      "category": "DRT·셔틀",
+      "brand_name": "셔클(Shucle)",
+      "legal_hint": "현대자동차"
+    },
+    {
+      "id": "05-03",
+      "type_id": "05",
+      "category": "DRT·셔틀",
+      "brand_name": "VUS",
+      "legal_hint": "브이유에스"
+    },
+    {
+      "id": "05-04",
+      "type_id": "05",
+      "category": "DRT·셔틀",
+      "brand_name": "위즈돔",
+      "legal_hint": "위즈돔"
+    },
+    {
+      "id": "05-05",
+      "type_id": "05",
+      "category": "DRT·셔틀",
+      "brand_name": "더스윙",
+      "legal_hint": "더스윙"
+    },
+    {
+      "id": "06-01",
+      "type_id": "06",
+      "category": "주차·교통시설 플랫폼",
+      "brand_name": "아이파킹",
+      "legal_hint": "파킹클라우드"
+    },
+    {
+      "id": "06-02",
+      "type_id": "06",
+      "category": "주차·교통시설 플랫폼",
+      "brand_name": "하이파킹",
+      "legal_hint": "휴맥스모빌리티"
+    },
+    {
+      "id": "06-03",
+      "type_id": "06",
+      "category": "주차·교통시설 플랫폼",
+      "brand_name": "나이스파크",
+      "legal_hint": "한국전자금융"
+    },
+    {
+      "id": "06-04",
+      "type_id": "06",
+      "category": "주차·교통시설 플랫폼",
+      "brand_name": "KM파크 / 카카오 T 주차",
+      "legal_hint": "카카오모빌리티"
+    },
+    {
+      "id": "06-05",
+      "type_id": "06",
+      "category": "주차·교통시설 플랫폼",
+      "brand_name": "모두의주차장",
+      "legal_hint": "쏘카"
+    },
+    {
+      "id": "06-06",
+      "type_id": "06",
+      "category": "주차·교통시설 플랫폼",
+      "brand_name": "아마노코리아",
+      "legal_hint": "아마노코리아"
+    },
+    {
+      "id": "07-01",
+      "type_id": "07",
+      "category": "전기차 충전 인프라",
+      "brand_name": "채비(CHAEVI)",
+      "legal_hint": "채비"
+    },
+    {
+      "id": "07-02",
+      "type_id": "07",
+      "category": "전기차 충전 인프라",
+      "brand_name": "SK일렉링크",
+      "legal_hint": "SK일렉링크"
+    },
+    {
+      "id": "07-03",
+      "type_id": "07",
+      "category": "전기차 충전 인프라",
+      "brand_name": "GS차지비",
+      "legal_hint": "GS차지비"
+    },
+    {
+      "id": "07-04",
+      "type_id": "07",
+      "category": "전기차 충전 인프라",
+      "brand_name": "에버온",
+      "legal_hint": "에버온"
+    },
+    {
+      "id": "07-05",
+      "type_id": "07",
+      "category": "전기차 충전 인프라",
+      "brand_name": "플러그링크",
+      "legal_hint": "플러그링크"
+    },
+    {
+      "id": "07-06",
+      "type_id": "07",
+      "category": "전기차 충전 인프라",
+      "brand_name": "EVSIS(이브이시스)",
+      "legal_hint": "이브이시스"
+    },
+    {
+      "id": "07-07",
+      "type_id": "07",
+      "category": "전기차 충전 인프라",
+      "brand_name": "워터(WATER)",
+      "legal_hint": "BEP"
+    },
+    {
+      "id": "07-08",
+      "type_id": "07",
+      "category": "전기차 충전 인프라",
+      "brand_name": "볼트업(VoltUp)",
+      "legal_hint": "LG유플러스"
+    },
+    {
+      "id": "07-09",
+      "type_id": "07",
+      "category": "전기차 충전 인프라",
+      "brand_name": "휴맥스EV",
+      "legal_hint": "휴맥스이브이"
+    },
+    {
+      "id": "07-10",
+      "type_id": "07",
+      "category": "전기차 충전 인프라",
+      "brand_name": "파워큐브코리아",
+      "legal_hint": "파워큐브코리아"
+    },
+    {
+      "id": "07-11",
+      "type_id": "07",
+      "category": "전기차 충전 인프라",
+      "brand_name": "이지차저",
+      "legal_hint": "이지차저"
+    },
+    {
+      "id": "07-12",
+      "type_id": "07",
+      "category": "전기차 충전 인프라",
+      "brand_name": "펌프킨",
+      "legal_hint": "펌프킨"
+    },
+    {
+      "id": "07-13",
+      "type_id": "07",
+      "category": "전기차 충전 인프라",
+      "brand_name": "NICE인프라",
+      "legal_hint": "NICE인프라"
+    },
+    {
+      "id": "08-01",
+      "type_id": "08",
+      "category": "물류·배송·플릿 솔루션",
+      "brand_name": "위밋모빌리티",
+      "legal_hint": "위밋모빌리티"
+    },
+    {
+      "id": "08-02",
+      "type_id": "08",
+      "category": "물류·배송·플릿 솔루션",
+      "brand_name": "로지스팟",
+      "legal_hint": "로지스팟"
+    },
+    {
+      "id": "08-03",
+      "type_id": "08",
+      "category": "물류·배송·플릿 솔루션",
+      "brand_name": "테크타카",
+      "legal_hint": "테크타카"
+    },
+    {
+      "id": "08-04",
+      "type_id": "08",
+      "category": "물류·배송·플릿 솔루션",
+      "brand_name": "콜로세움",
+      "legal_hint": "콜로세움코퍼레이션"
+    },
+    {
+      "id": "08-05",
+      "type_id": "08",
+      "category": "물류·배송·플릿 솔루션",
+      "brand_name": "CJ대한통운",
+      "legal_hint": "CJ대한통운"
+    },
+    {
+      "id": "08-06",
+      "type_id": "08",
+      "category": "물류·배송·플릿 솔루션",
+      "brand_name": "바로고",
+      "legal_hint": "바로고"
+    },
+    {
+      "id": "08-07",
+      "type_id": "08",
+      "category": "물류·배송·플릿 솔루션",
+      "brand_name": "팀프레시",
+      "legal_hint": "팀프레시"
+    },
+    {
+      "id": "09-01",
+      "type_id": "09",
+      "category": "지도·위치·교통데이터",
+      "brand_name": "티맵",
+      "legal_hint": "티맵모빌리티"
+    },
+    {
+      "id": "09-02",
+      "type_id": "09",
+      "category": "지도·위치·교통데이터",
+      "brand_name": "아이나비시스템즈",
+      "legal_hint": "아이나비시스템즈"
+    },
+    {
+      "id": "09-03",
+      "type_id": "09",
+      "category": "지도·위치·교통데이터",
+      "brand_name": "카카오 T",
+      "legal_hint": "카카오모빌리티"
+    },
+    {
+      "id": "09-04",
+      "type_id": "09",
+      "category": "지도·위치·교통데이터",
+      "brand_name": "네이버 지도",
+      "legal_hint": "네이버"
+    },
+    {
+      "id": "09-05",
+      "type_id": "09",
+      "category": "지도·위치·교통데이터",
+      "brand_name": "현대오토에버",
+      "legal_hint": "현대오토에버"
+    },
+    {
+      "id": "10-01",
+      "type_id": "10",
+      "category": "로봇 배송·무인운송",
+      "brand_name": "뉴빌리티",
+      "legal_hint": "뉴빌리티"
+    },
+    {
+      "id": "10-02",
+      "type_id": "10",
+      "category": "로봇 배송·무인운송",
+      "brand_name": "로보티즈",
+      "legal_hint": "로보티즈"
+    },
+    {
+      "id": "10-03",
+      "type_id": "10",
+      "category": "로봇 배송·무인운송",
+      "brand_name": "딜리",
+      "legal_hint": "우아한형제들"
+    },
+    {
+      "id": "10-04",
+      "type_id": "10",
+      "category": "로봇 배송·무인운송",
+      "brand_name": "모빈",
+      "legal_hint": "모빈"
+    },
+    {
+      "id": "10-05",
+      "type_id": "10",
+      "category": "로봇 배송·무인운송",
+      "brand_name": "트위니",
+      "legal_hint": "트위니"
+    },
+    {
+      "id": "10-06",
+      "type_id": "10",
+      "category": "로봇 배송·무인운송",
+      "brand_name": "도구공간",
+      "legal_hint": "도구공간"
+    }
+  ],
+  "minimum_candidate_count": 64,
+  "minimum_channel_rows": 768
+}
