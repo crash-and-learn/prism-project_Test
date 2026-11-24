@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2",
+  "schema_version": "1.2.1",
   "description": "64개 유형별 후보 행(중복 브랜드 포함)을 하나도 누락하지 않기 위한 조사계약. 관계 확인 전 legal_hint는 사실 단정 금지.",
   "types": [
     {
@@ -94,63 +94,81 @@
     }
   ],
   "discovery": {
-    "unanchored_channels": [
+    "keyword_channels": [
       "web",
       "wanted",
       "saramin",
-      "jobkorea"
+      "jobkorea",
+      "linkedin",
+      "incruit",
+      "rocketpunch",
+      "rallit_jumpit",
+      "jobplanet",
+      "global_careers"
     ],
     "min_results_reviewed": 10,
-    "note": "유형마다 unanchored_queries × unanchored_channels 조합을 기업명 없이 검색한다. 후보별 entity 검색 1건은 브랜드·법인·모회사 별칭으로 새 채용 경로와 실제 채용 법인을 찾는다."
+    "note": "유형마다 types[].unanchored_queries를 keyword_channels 각각에서 기업명 없이 검색한다(가능하면 사이트 내부 검색창). scope=type 채널의 768칸은 이 검색으로 채운다. scope=entity 채널(group, official_social)은 후보별 법인·경로 검색(E 작업)으로 채운다. scope=company 채널은 기업별 채용 목록을 직접 연다."
   },
   "channels": [
     {
       "id": "official",
-      "name": "회사 공식 채용"
+      "name": "회사 공식 채용",
+      "scope": "company"
     },
     {
       "id": "group",
-      "name": "모회사·그룹/운영법인"
+      "name": "모회사·그룹/운영법인",
+      "scope": "entity"
     },
     {
       "id": "linkedin",
-      "name": "LinkedIn Jobs"
+      "name": "LinkedIn Jobs",
+      "scope": "type"
     },
     {
       "id": "wanted",
-      "name": "원티드"
+      "name": "원티드",
+      "scope": "company"
     },
     {
       "id": "saramin",
-      "name": "사람인"
+      "name": "사람인",
+      "scope": "company"
     },
     {
       "id": "jobkorea",
-      "name": "잡코리아"
+      "name": "잡코리아",
+      "scope": "company"
     },
     {
       "id": "incruit",
-      "name": "인크루트"
+      "name": "인크루트",
+      "scope": "type"
     },
     {
       "id": "rocketpunch",
-      "name": "로켓펀치"
+      "name": "로켓펀치",
+      "scope": "type"
     },
     {
       "id": "rallit_jumpit",
-      "name": "랠릿·점핏"
+      "name": "랠릿·점핏",
+      "scope": "type"
     },
     {
       "id": "jobplanet",
-      "name": "잡플래닛"
+      "name": "잡플래닛",
+      "scope": "type"
     },
     {
       "id": "official_social",
-      "name": "공식 SNS/인재풀"
+      "name": "공식 SNS/인재풀",
+      "scope": "entity"
     },
     {
       "id": "global_careers",
-      "name": "글로벌 Careers/기타"
+      "name": "글로벌 Careers/기타",
+      "scope": "type"
     }
   ],
   "candidates": [
@@ -604,5 +622,21 @@
     }
   ],
   "minimum_candidate_count": 64,
-  "minimum_channel_rows": 768
+  "minimum_channel_rows": 768,
+  "registry": {
+    "recheck_days": 180
+  },
+  "execution": {
+    "min_type_minutes": 5,
+    "min_record_batches": 3,
+    "spotcheck_per_type": 3,
+    "turn_budget": 500,
+    "default_new_discoveries_per_type": 30,
+    "methods": {
+      "browser": "브라우저로 페이지 직접 열기",
+      "platform_search": "사이트 내부 검색창",
+      "web_search": "외부 검색엔진(site: 포함)",
+      "fetch": "웹 가져오기 도구"
+    }
+  }
 }

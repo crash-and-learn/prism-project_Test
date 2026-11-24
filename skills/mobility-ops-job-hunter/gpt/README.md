@@ -1,10 +1,10 @@
-# ChatGPT 맞춤형 GPT 설정 (Mobility Ops Job Hunter v1.2)
+# ChatGPT에서 쓰기 (Mobility Ops Job Hunter v1.2.1)
 
-1. ChatGPT → GPT 만들기 → 구성(Configure).
-2. **Instructions**: `GPT_INSTRUCTIONS.md` 전체를 붙여넣는다.
-3. **Knowledge**: `knowledge/` 폴더의 파일 7개를 모두 업로드한다.
-4. **Capabilities**: 웹 검색, 코드 인터프리터·데이터 분석을 켠다.
-5. 대화 시작 예: "이전 조사표 올렸어. 10개 유형 조사 진행해줘." (+ 이전 xlsx 또는 장부 json 첨부)
-6. 대화가 끝나기 전에 장부 JSON과 보고서 MD를 꼭 내려받는다. 다음 회차에 다시 올린다.
+**스킬로 쓰는 경우(권장)**: 이 zip 전체를 스킬로 올려 이전 버전을 교체한다. `@Mobility Ops Job Hunter`로 부른다.
 
-동작 확인(선택): 코드 인터프리터에서 `python /mnt/data/ledger.py init /mnt/data/t.json` 후 `python /mnt/data/ledger.py audit /mnt/data/t.json`을 실행하면 `FAIL ... {'not_done': 10}`이 나와야 한다(아직 아무것도 조사하지 않았으므로 정상).
+**맞춤형 GPT로 쓰는 경우**
+1. 지침(Instructions): `gpt/GPT_INSTRUCTIONS.md` 내용 전체를 붙여넣는다.
+2. 지식(Knowledge): `SKILL.md`, `scripts/ledger.py`, `references/` 안 파일 5개를 올린다.
+3. 기능: 웹 검색과 코드 실행(코드 인터프리터)을 켠다. 브라우저 조작 모드가 있으면 그 모드에서 실행한다.
+
+매 턴 끝에 장부 JSON을 내려받고, 다음 회차에는 그 파일 하나만 첨부한다.

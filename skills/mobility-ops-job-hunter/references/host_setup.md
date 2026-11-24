@@ -1,28 +1,27 @@
 # 호스트별 설치·실행 (Claude / GPT 공용)
 
-스크립트는 Python 3.9 이상 표준 라이브러리만 쓴다. 이전 조사표가 xlsx일 때만 `openpyxl`이 필요하다(ChatGPT 코드 실행 환경에는 기본 설치돼 있음). `ledger.py`는 `coverage_contract.json`을 다음 순서로 찾는다: `--contract` → 환경변수 `MOJH_CONTRACT` → `../references/` → 스크립트와 같은 폴더 → 현재 폴더 → `/mnt/data/`.
+스크립트는 Python 3.9 이상 표준 라이브러리만 쓴다. 이전 조사표가 xlsx일 때만 `openpyxl`이 필요하다. `ledger.py`는 `coverage_contract.json`을 `--contract` → `MOJH_CONTRACT` → `../references/` → 스크립트 폴더 → 현재 폴더 → `/mnt/data/` 순서로 찾는다.
 
-## Claude (Claude Code · Claude 앱 스킬)
+## 설치
 
-- `dist/mobility-ops-job-hunter-v1.2.0.zip`을 스킬로 업로드하거나, 폴더를 `~/.claude/skills/` 또는 프로젝트의 `.claude/skills/`에 둔다.
-- 명령: `python <스킬 폴더>/scripts/ledger.py ...`
-- 웹 조회는 Claude의 웹 검색·가져오기 도구로 하고, 장부 기록은 코드 실행으로 한다.
+- **ChatGPT 스킬 / Claude 스킬**: `mobility-ops-job-hunter-v1.2.1.zip`을 스킬로 업로드해 이전 버전을 교체한다. 이름이 같으므로 `@Mobility Ops Job Hunter`로 그대로 부른다. 이전 버전은 지운다.
+- **ChatGPT 맞춤형 GPT**: zip 안 `gpt/GPT_INSTRUCTIONS.md`를 지침(Instructions)에, `SKILL.md`·`scripts/ledger.py`·`references/*`를 지식(Knowledge)에 올리고 웹 검색과 코드 실행을 켠다.
 
-## GPT — 스킬(SKILL.md) 폴더를 지원하는 환경 (Codex 등)
+## 브라우저 조작 모드 (에이전트·워크모드)
 
-- 같은 `mobility-ops-job-hunter-v1.2.0.zip`을 그 환경의 스킬 폴더 규칙대로 설치한다. SKILL.md 형식은 동일하다.
+v1.2.1은 채용 목록을 직접 여는 방식을 우선한다. 브라우저를 조작할 수 있는 모드가 있으면 그 모드에서 실행한다. 모드마다 가능한 일이 다를 수 있으므로 처음 한 번 아래 세 가지를 확인한다.
 
-## GPT — ChatGPT 맞춤형 GPT(GPTs) / 프로젝트
+1. 업로드한 장부로 `python .../ledger.py next 장부.json`이 실행되는가 → 안 되면 웹 조사는 브라우저 모드에서, 기록(`add`)은 코드 실행이 되는 모드에서 한다.
+2. 지난 회차에 403이던 원티드 상세 페이지가 열리는가 → 안 되면 원티드는 `access_blocked` + 대체 원문.
+3. 사람인 사이트 내부 검색창에 기업명을 넣어 결과를 읽을 수 있는가 → 안 되면 `web_search`로 대체하고 `method`에 그대로 적는다.
 
-`dist/mobility-ops-job-hunter-v1.2.0-gpt.zip`을 푼다.
+## 턴 나누기
 
-1. **Instructions**: `GPT_INSTRUCTIONS.md` 내용을 그대로 붙여넣는다(8,000자 이하).
-2. **Knowledge**: `knowledge/` 폴더의 파일 전부를 올린다. 폴더 없이 평평하게 올라가도 되도록 구성돼 있다.
-3. **Capabilities**: 웹 검색과 **코드 인터프리터·데이터 분석**을 모두 켠다. 코드 실행이 꺼져 있으면 자동 감사를 할 수 없다.
-4. 실행: `python /mnt/data/ledger.py init /mnt/data/조사_YYYYMMDD.json --baseline /mnt/data/<이전조사표>.xlsx`
-5. 대화가 끝나면 `/mnt/data`가 사라진다. 장부 JSON과 보고서 MD를 매번 내려받아 다음 회차에 다시 올린다.
+- 한 턴 = 사용자 메시지 1번 + 그에 대한 답변 1번. 답변 안의 검색·열람 횟수와 무관하다.
+- `init`이 턴 계획을 만든다(기본: 턴당 예상 웹 작업 500건, 유형 경계에서 끊음). 이전 회차 자료 기준 예: 01–03 / 04–06 / 07–08 / 09–10.
+- 턴이 끝나면 장부를 저장하고 멈춘다. 사용자가 "계속"이라고 하면 `next`로 이어간다.
+- 대화를 새로 열어야 하면 장부 JSON을 내려받아 새 대화에 첨부하고 "이어서 진행"이라고 한다.
 
-## 공통 주의
+## 파일 보존
 
-- 한 대화에서 10개 유형을 다 못 끝내면 장부 파일을 받아 두고, 다음 대화에서 그 장부를 올려 이어서 `start-type`부터 진행한다. 이미 종료한 유형은 다시 열 수 없다. 재조사는 새 회차 장부로 한다.
-- 어느 호스트든 실제로 열지 않은 페이지나 실행하지 않은 검색을 기록하면 안 된다. 감사는 기록의 정합성만 확인한다.
+ChatGPT 대화 환경의 파일은 대화가 끝나면 사라질 수 있다. 턴마다 장부 JSON을 다운로드 링크로 받는다. 다음 회차에는 그 장부 하나만 첨부하면 된다(법인 등록부·이월 항목 포함).
